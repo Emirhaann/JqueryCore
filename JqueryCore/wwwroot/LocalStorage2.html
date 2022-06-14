@@ -25,7 +25,7 @@
                                 <div class="form-group">
 
                                     <label>
-                                        name:<input type="text" name="name" class="form-control" />
+                                        name:<input type="text" name="key" class="form-control" />
 
                                     </label>
                                     
@@ -38,7 +38,7 @@
                                     </label>
                                     
                                 </div>
-                                <input type="button" class="btn btn-info" value="Set Item" style="margin-top:10px"/>
+                                <input type="button" class="btn btn-info" value="Set Item" style="margin-top:10px" onclick="doSetItem()"/>
 
 
                             </div>
@@ -88,7 +88,7 @@
         }
         function doSetItem() {
             //document içerisinde ki formun editore sahip olanin value'su
-            var name = document.forms.editor.name.value;
+            var name = document.forms.editor.key.value;
             var data = document.forms.editor.data.value;
             localStorage.setItem(name, data);
             doShowAll();
