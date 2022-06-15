@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery/jquery.min.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .metin {
+            width: 170px;
+            height: 150px;
+            float: left;
+            margin-right: 12px;
+            border-radius: 10px;
+            line-height: 150px;
+            text-align: center;
+            -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+            box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: large;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var renkler = [];
+            var index = true;
+            $("r").click(function () {
+                var etiketler = document.getElementsByTagName("p");
+                if (index == true) {
+                    for (var i = 0; i < etiketler.length; i++) {
+                        renkler.push($(etiketler[i]).css("backgorundColor"));
+                    }
+                    $("p").css("backgorund-color", $(this).css("backgroudColor"));
+                    index = false;
+                }
+                else {
+                    for (var i = 0; i < etiketler.length; i++) {
+                        $(etiketler )
+                    }
+                }
+            })
+
+
+            var indexx = 0;
+            var colors = [];
+            var time = 0;
+
+
+            $("p").click(function () {
+                indexx = 0;
+                colors = [];
+                time = 0;
+
+
+                var color = $(this).css("backgroundColor");
+                var elemanlar = document.getElementsByTagName("p");
+
+
+                console.log(elemanlar);
+                for (var i = 0; i < elemanlar.length; i++) {
+                    color.push($(elemanlar[i]).css("backgorundColor"));
+                }
+                time = elemanlar.length * 600;
+
+                $("p").css("backgorund-Color", "white");
+
+                var timer = setInterval(function () {
+                    if (indexx == elemanlar.length) {
+                        clearInterval(timer);
+                    }
+                    $(elemanlar[indexx]).css({ "backgorund-Color": color });
+
+                    indexx++;
+                }, 500);
+                var Times = setTimeout(function () {
+                    indexx = 0;
+                    var secondTimer = setInterval(function () {
+                        if (indexx == elemanlar.length) {
+                            clearInterval(secondTimer);
+                        }
+                        $(elemanlar[indexx]).css("background-color", colors[indexx]);
+                    },500);
+                },time);
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:50px">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-lg-12">
+                        <p class="metin" style="background-color:#ffdc00">metin1</p>
+                        <p class="metin" style="background-color:#ff851b">metin2</p>
+                        <p class="metin" style="background-color:#ff4136">metin3</p>
+                        <p class="metin" style="background-color:#01ff70">metin4</p>
+                        <p class="metin" style="background-color:#f012be">metin5</p>
+                        <p class="metin" style="background-color:#39cccc">metin6</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .metin{
+            width:170px;
+            height:150px;
+            float:left;
+            margin-right:12px;
+            border-radius:10px;
+            line-height:150px;
+            text-align:center;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size:large;
+        }
+
+    </style>
+    <script src="jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        //Browser üzerind ebütün döküman oluştuktan sonra yazdımız kodlar çalışsın
+        $(document).ready(function () {
+
+            $("#bir").click(function () {
+                $('p').html(' ');
+                $("#metin").html('sayfa üzerinde ki tüm p etiketlerinin içeriğine merhaba jquery yazdıralım');
+                $('p').html('merhaba Jquery');
+            });
+
+            $("#iki").click(function () {
+                $("#metin").html("id si metin1 olan p nin içerigini değiştirme");
+                $("p#metin1").html("Merhaba Mars");
+            });
+            $("#uc").click(function () {
+                $("#metin").html("Idsi metin1 ile metin2 olan p'lerin html içeriğini değiştirme ")
+                $("#metin1 ,#metin2").hrml("Merhaba Jupiter");
+            });
+
+            $("#dort").click(function () {
+                $("#metin").html("language tr olan  p lerin html içerğini değiştirme")
+                $("p[lang=tr]").html("Merhaba venus ");
+                $("p[lang=fr]").html("Merhaba Neptün ");
+            });
+
+            $("#bes").click(function () {
+                $("#metin").html("language tr ve en olan  p lerin html içerğini değiştirme")
+                $("p[lang=tr],p[lang=en]").html("Merhaba Saturn ");
+            });
+
+            $("#alti").click(function () {
+                $("#metin").html("language en ve id metin2 olan  p lerin html içerğini değiştirme")
+                $("p[lang=en]p[id=metin2]").html("Merhaba merkur ");
+            });
+
+            $("#yedi").click(function () {
+                $("#metin").html("id si metin3 olmayan html içerğini değiştirme")
+                $("p[id!=metin3").html("Merhaba Dunya ");
+            });
+
+            $("#sekiz").click(function () {
+                $("#metin").html("id si m ile başlayan  p lerin html içerğini değiştirme")
+                $("p[id^=me]").html("Merhaba Europa ");
+            });
+
+            $("#dokuz").click(function () {
+                $("#metin").html("id si 6 ile biten p lerin html içerğini değiştirme")
+                $("p[id$=6]").html("Merhaba Üranüs ");
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:50px">
+            <div class="col-lg-12">
+
+                <p id="metin1" lang="tr" class="metin" style="background-color:#FFDC00">metin1</p>
+                <p id="metin2" lang="en" class="metin" style="background-color:#FF851B">metin2</p>
+                <p id="metin3" lang="tr" class="metin" style="background-color:#FF4136">metin3</p>
+                <p id="BaMetin4" lang="fr" class="metin" style="background-color:#01FF70">BaMetin4</p>
+                <p id="metin5" lang="tr" class="metin" style="background-color:#F012BE">metin5</p>
+                <p id="BaMetin6" lang="en" class="metin" style="background-color:#39CCCC">BaMetin6</p>
+
+            </div>
+
+            <p id="metin"></p>
+            <div class="card" style="margin-top:40px">
+                <div class="card-body">
+                    
+                    <div class="col-lg-12">
+                        <div class="btn-group">
+                            <a id="bir" class="btn btn-primary">Örnek Bir</a>
+                            <a id="iki" class="btn btn-secondary">Örnek İki</a>
+                            <a id="uc" class="btn btn-info">Örnek Üç</a>
+                            <a id="dort" class="btn btn-danger">Örnek Dört</a>
+                            <a id="bes" class="btn btn-light">Örnek Beş</a>
+                            <a id="alti" class="btn btn-outline-primary ">Örnek alti</a>
+                            <a id="yedi" class="btn btn-outline-secondary">Örnek yedi</a>
+                            <a id="sekiz" class="btn btn-outline-info">Örnek sekiz</a>
+                            <a id="dokuz" class="btn btn-outline-warning">Örnek Dokuz</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+    
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
